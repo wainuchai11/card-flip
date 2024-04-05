@@ -1,0 +1,63 @@
+.card {
+  width: 400px;
+}
+
+.card-content {
+  position: relative;
+  padding: 15rem 5rem;
+  transform-style: preserve-3d;
+  transition: transform 3s;
+}
+
+.card:hover .card-content {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.card-front {
+  background-image: url("https://images.pexels.com/photos/18359748/pexels-photo-18359748.jpeg?auto=compress&cs=tinysrgb&w=400&h=750&dpr=1");
+  background-color: rgba(255, 163, 42, 0.2);
+  align-content: center;
+}
+
+.card-back {
+  background-image: url("https://images.pexels.com/photos/18186390/pexels-photo-18186390.jpeg?auto=compress&cs=tinysrgb&w=400&h=750&dpr=1");
+  transform: rotateY(180deg);
+  gap: 0.5 rem;
+}
+
+.card-front::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 3px solid yellow;
+  transform: rotateZ(2rem);
+}
+
+.title {
+  transform: transformZ(4.4rem);
+  text-align: center;
+  font-size: 5rem;
+  color: white;
+  font-weight: 500;
+}
+
+.sub-title {
+  transform: transformZ(3rem);
+  text-align: center;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  font-weight: 400;
+}
